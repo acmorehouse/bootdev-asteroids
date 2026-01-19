@@ -11,6 +11,11 @@ def main():
 # Initialize pygame module
     pygame.init()
 
+# Global clock initialize
+
+    global_clock = pygame.time.Clock()
+    dt = 0
+
 # Set screen for game
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -25,6 +30,9 @@ def main():
         screen.fill("black")
 
         pygame.display.flip()
+
+        dt = global_clock.tick(60)/1000
+        # print(f"delta time: {dt}")
 
 if __name__ == "__main__":
     main()
