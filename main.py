@@ -1,7 +1,7 @@
 import pygame
 import circleshape
 
-from player import Player_shape
+from player import Player
 from logger import log_state
 from constants import SCREEN_HEIGHT
 from constants import SCREEN_WIDTH
@@ -24,7 +24,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # initialize player
-    player = Player_shape(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, PLAYER_RADIUS)
+    player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, PLAYER_RADIUS)
 
 # Game loop
     while True:
@@ -38,6 +38,7 @@ def main():
         
 
         player.update(dt)
+
         player.draw(screen)
 
         pygame.display.flip()

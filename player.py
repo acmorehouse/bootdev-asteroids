@@ -3,7 +3,7 @@ import pygame
 import constants
 # from main import dt
 
-class Player_shape(CircleShape):
+class Player(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
         self.x_pos = x
