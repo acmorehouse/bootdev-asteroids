@@ -1,7 +1,11 @@
 import pygame
+import circleshape
+
+from player import Player
 from logger import log_state
 from constants import SCREEN_HEIGHT
 from constants import SCREEN_WIDTH
+from constants import PLAYER_RADIUS
 
 def main():
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
@@ -28,6 +32,9 @@ def main():
                 return
 
         screen.fill("black")
+        
+        player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, PLAYER_RADIUS)
+        player.draw(screen)
 
         pygame.display.flip()
 
